@@ -3,10 +3,9 @@ package com.coralogix.calculator.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "ExchangeRate")
 public class ExchangeRate {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column

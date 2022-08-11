@@ -22,6 +22,11 @@ public class ExchangeController {
         return exchangeService.getAllExchangesRate();
     }
 
+    @GetMapping("/exchange")
+    public ExchangeRate getExchange(@RequestParam String originCurrency, @RequestParam String finalCurrency) {
+        return exchangeService.getExchangeFromExternal(originCurrency, finalCurrency);
+    }
+
     @GetMapping("/matrix")
     public String printMatrix(@RequestParam int userValue) {
         StringBuilder stringBuilder = new StringBuilder();
